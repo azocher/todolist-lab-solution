@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import ToDoItem from './ToDoItem'
+import ClearList from './ClearList'
 
 class ToDoList extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class ToDoList extends Component {
         <form>
           <input type="text" placeholder="Add a todo list item" value={this.state.newItem} onChange={(e) => this.updateItem(e)} />
           <button type="submit" onClick={(e) => this.addItem(e)}>Submit</button>
-          <button onClick={(e) => this.clearItems(e)}>Clear List</button>
+          <ClearList clearItems={this.clearItems} />
         </form>
       </div>
     )
